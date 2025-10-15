@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 import jwt from "jsonwebtoken"; //beerer token like a key
 import bcrypt from "bcryptjs";
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     username: {
       type: String,
