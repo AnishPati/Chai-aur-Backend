@@ -21,4 +21,9 @@ app.use(express.static("public")); //A folder to store some items, images etc...
 
 app.use(cookieParser()); // Getting access of secure cookies from the brwoser by the server secretly and perform crud operations
 
+//Routes import
+import userRouter from "./routes/user.routes.js";
+
+//Routes declaration
+app.use("/api/v1/users", userRouter); //https:localhost:8000/api/v1/users
 export { app };
