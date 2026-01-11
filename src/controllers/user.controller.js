@@ -21,10 +21,6 @@ export const registerUser = asyncHandler(async (req, res) => {
   const { fullName, email, username, password } = req.body; //Geting the users details [1.]
   console.log(fullName, email, username, password);
 
-  /*if(fullName === ""){
-    throw new ApiError(400, "Fullname is required")
-  }*/
-
   if (
     [fullName, email, username, password].some((field) =>
       field?.trim() === "") ///.some() will check all the elemments of the array are provoided or not
@@ -73,6 +69,5 @@ export const registerUser = asyncHandler(async (req, res) => {
   return res.status(201).json(
     new ApiResponse(200, createdUser, "User registered successfully") //Sending res to the client [9.]
   )
-
-
+  
 });
